@@ -113,13 +113,14 @@ displayProducts();
   }
 )
   }
-  // Function to handle adding to cart (you can modify this as per your requirements)
-//   function addToCart(product) {
-//     console.log(`Added to cart: ${product.name}, ${product.price}`);
   
-//     // Here you can also update cart count or store cart items in an array
-//     const cartCount = document.getElementById('cart-count');
-//     cartCount.textContent = parseInt(cartCount.textContent) + 1; // Update cart count
-//   }
+  function addToCart(product){
+    debugger
+    let current_item = parseFloat(document.getElementById('cart-count').innerHTML);
+    current_item++;
+    document.getElementById('cart-count').textContent = current_item++;
+    const productInCart = cart.find(item => item.id === product.id);
+
+  }
   
 //   displayProducts();
