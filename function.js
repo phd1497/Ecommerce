@@ -1,42 +1,79 @@
 
 const cart = [];
+const products =[
+    {
+        name: "Clothes 1",
+        price: 16,
+        image: "image1.png"
+    },
+    {
+        name: "Clothes 2",
+        price: 15,
+        image: "image2.png"
+    },
+    {
+        name: "Clothes 3",
+        price: 17,
+        image: "image3.png"
+    },
+    {
+        name: "Clothes 4",
+        price: 18,
+        image: "image4.png"
+    }
+];
 
+displayProducts();
+  
 
-function addToCart(event) {
+  function displayProducts() {
     debugger
-    const productElement = event.target.closest('.product'); // Find the closest parent .product
-  const productName = productElement.querySelector('#name-item').textContent;
-  const productPriceText = productElement.querySelector('#price-item').textContent;
-  const productPrice = parseFloat(productPriceText.replace('Price: $', ''));
-return;
-  // Check if the product is already in the cart
-  const existingProduct = cart.find(item => item.name === productName);
-
-  if (existingProduct) {
-    // If the product is already in the cart, increase the quantity
-    existingProduct.quantity += 1;
-  } else {
-    // If the product is not in the cart, add it as a new item
-    cart.push({ name: productName, price: productPrice, quantity: 1 });
+    const productList = document.querySelector('.product-list');
+  
+    // Loop through each product in the array
+    products.forEach(product => {
+      // Create a new product div
+      const productDiv = document.createElement('div');
+      productDiv.classList.add('product');
+      productDiv.setAttribute('product-id', product.id); // Set product-id as an attribute
+  
+      debugger
+      const productImage = document.createElement('img');
+      productImage.id = 'imgs';
+      productImage.src = product.image;
+      productImage.alt = product.name;
+  
+      const productName = document.createElement('h3');
+      productName.id = 'name-item';
+      productName.textContent = product.name;
+  
+      const productPrice = document.createElement('p');
+      productPrice.id = 'price-item';
+      productPrice.textContent = `Price: ${product.price}`;
+  
+      const addToCartButton = document.createElement('button');
+      addToCartButton.id = 'btn-add';
+      addToCartButton.textContent = 'Add to Cart';
+      addToCartButton.addEventListener('click', () => addToCart(product)); 
+  
+   
+      productDiv.appendChild(productImage);
+      productDiv.appendChild(productName);
+      productDiv.appendChild(productPrice);
+      productDiv.appendChild(addToCartButton);
+  
+   
+      productList.appendChild(productDiv);
   }
-
-  // Update the cart count in the header
-  updateCartCount();
-}
-
-// Function to update the cart count in the header
-function updateCartCount() {
-  const cartCountElement = document.getElementById('cart-count');
-
-  // Calculate the total number of items in the cart
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-  // Update the cart count display
-  cartCountElement.textContent = totalItems;
-}
-
-// Attach the addToCart function to each "Add to Cart" button
-const addButtons = document.querySelectorAll('#btn-add');
-addButtons.forEach(button => {
-  button.addEventListener('click', addToCart);
-});
+)
+  }
+  // Function to handle adding to cart (you can modify this as per your requirements)
+//   function addToCart(product) {
+//     console.log(`Added to cart: ${product.name}, ${product.price}`);
+  
+//     // Here you can also update cart count or store cart items in an array
+//     const cartCount = document.getElementById('cart-count');
+//     cartCount.textContent = parseInt(cartCount.textContent) + 1; // Update cart count
+//   }
+  
+//   displayProducts();
