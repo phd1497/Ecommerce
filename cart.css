@@ -1,0 +1,28 @@
+/* Cart Styles */
+.cart {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cart h2 {
+    margin-top: 0;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart p {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  

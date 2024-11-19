@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Product Page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <h1 class="navbar-title">LoCo Shop</h1>
+          <div class="cart-icon">
+            <a href=""><i class="fas fa-shopping-cart" style="color: #ffffff;"></i>
+                <span id="cart-count">0</span>
+            </a>
+          </div>
+        </div>
+      </nav>  
+  </header>
+  <main>
+    <div class="product-list" id="product1">
+      <div class="product">
+        <img id="imgs" src="image1.png" alt="Clothes">
+        <h3 id="name-item">Clothes 1</h3>
+        <p id="price-item">Price: $15.99</p>
+        <button id="btn-add" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product" id="product1">
+        <img id="imgs" src="image2.png" alt="Clothes">
+        <h3 id="name-item">Clothes 2</h3>
+        <p id="price-item">Price: $12.99</p>
+        <button id="btn-add" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img id="imgs" src="image3.png" alt="Clothes">
+        <h3 id="name-item">Clothes 3</h3>
+        <p id="price-item">Price: $19.99</p>
+        <button id="btn-add" onclick="addToCart()">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img id="imgs" src="image4.png" alt="Clothes">
+        <h3 id="name-item">Clothes 4</h3>
+        <p id="price-item">Price: $9.99</p>
+        <button id="btn-add" onclick="addToCart()">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>© 2024 Bracelet Shop. All rights reserved.</p>
+  </footer>
+  <script src="function.js"></script>
+</body>
+</html>
