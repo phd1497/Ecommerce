@@ -22,16 +22,33 @@
             </nav>
         </header>
         <main>
-            <div class="product-detail">
-                <div class="product-name"></div>
-
+            <div class="product-detail" id="product-detail">
+                <div class="product-photo"></div>
+                <div class="product-info">
+                    <div class="product-name"></div>
+                    <div class="product-price"></div>
+                    <div class="product-rating"></div></br>
+                    <div class="product-desc"></div>
+                    
+                </div>
             </div>
-
         </main>
         <footer>
             <p>© 2024 Bracelet Shop. All rights reserved.</p>
         </footer>
         <script src="function.js"></script>
+        <script>
+            // Get URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const productId = urlParams.get('productId');
+
+                // Find the product in your products array
+                const selected = products[productId]
+
+                if (selected) {
+                    displayProductDetail(selected);
+                }
+        </script>
     </body>
 
 </html>

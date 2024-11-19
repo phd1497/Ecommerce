@@ -72,6 +72,7 @@ const products = [
 
 displayProducts();
 
+<<<<<<< Updated upstream
   function displayProducts() {
     debugger
     const productList = document.querySelector('.product-list');
@@ -139,3 +140,78 @@ displayProducts();
             
             tbody.appendChild(newRow);
   }
+=======
+function displayProducts() {
+  const productList = document.querySelector('.product-list');
+
+  // Loop through each product in the array
+  for (const i in products) {
+    // Create a new product div
+    const productDiv = document.createElement('div');
+    productDiv.classList.add('product');
+    productDiv.setAttribute('product-id', products[i].id); // Set product-id as an attribute
+
+    const detail = document.createElement("button");
+    detail.id = "btn-add";
+    detail.textContent = "View";
+    detail.addEventListener('click', (evt) => {
+      const productId = i;
+      document.location.href = `/Ecommerce/productdetail.html?productId=${productId}`;
+    })
+
+    const productImage = document.createElement('img');
+    productImage.id = 'imgs';
+    productImage.src = products[i].image;
+    productImage.alt = products[i].name;
+
+    const productName = document.createElement('h3');
+    productName.id = 'name-item';
+    productName.textContent = products[i].name;
+
+    const productPrice = document.createElement('p');
+    productPrice.id = 'price-item';
+    productPrice.textContent = `Price: ${products[i].price}`;
+
+    const addToCartButton = document.createElement('button');
+    addToCartButton.id = 'btn-add';
+    addToCartButton.textContent = 'Add to Cart';
+    addToCartButton.addEventListener('click', () => addToCart(products[i])); 
+
+  
+    productDiv.appendChild(productImage);
+    productDiv.appendChild(productName);
+    productDiv.appendChild(productPrice);
+    productDiv.appendChild(addToCartButton);
+    productDiv.appendChild(detail);
+
+    productList.appendChild(productDiv);
+  }
+}
+  
+function addToCart(product){
+  debugger
+  let current_item = parseFloat(document.getElementById('cart-count').innerHTML);
+  current_item++;
+  document.getElementById('cart-count').textContent = current_item++;
+  const productInCart = cart.find(item => item.id === product.id);
+
+}
+  
+function displayProductDetail(product){
+  let photo = document.getElementsByClassName("product-photo")[0];
+  let name = document.getElementsByClassName("product-name")[0];
+  let price = document.getElementsByClassName("product-price")[0];
+  let rating = document.getElementsByClassName("product-rating")[0];
+  let desc = document.getElementsByClassName("product-desc")[0];
+
+  let img = document.createElement("img");
+  img.setAttribute("src", product.image);
+  img.setAttribute("alt", product.imageDescription)
+  photo.appendChild(img);
+  name.innerText = product.name;
+  price.innerText = `$${product.price}`;
+  rating.innerText = `Rating: ${product.review}`;
+  desc.innerText = product.productDescription;
+}
+//   displayProducts();
+>>>>>>> Stashed changes

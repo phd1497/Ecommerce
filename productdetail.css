@@ -75,3 +75,22 @@ footer {
     padding: 2px 6px;
     font-weight: bold;
 }
+
+.product-detail {
+    display:flex;
+    gap: 20px;
+}
+.product-photo img {
+    height: 300px;
+}
+.product-info {
+    align-self: center;
+}
+.product-name {
+    font-weight: 800;
+    font-size: 160%;
+}
+.product-price {
+    font-size: 140%;
+    color: blue;
+}
