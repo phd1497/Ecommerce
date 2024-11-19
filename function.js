@@ -78,10 +78,10 @@ displayProducts();
   
     // Loop through each product in the array
     products.forEach(product => {
-      // Create a new product div
+ 
       const productDiv = document.createElement('div');
       productDiv.classList.add('product');
-      productDiv.setAttribute('product-id', product.id); // Set product-id as an attribute
+      productDiv.setAttribute('product-id', product.id);
   
       debugger
       const productImage = document.createElement('img');
@@ -119,8 +119,23 @@ displayProducts();
     let current_item = parseFloat(document.getElementById('cart-count').innerHTML);
     current_item++;
     document.getElementById('cart-count').textContent = current_item++;
-    const productInCart = cart.find(item => item.id === product.id);
-
+    showCart(product);
   }
-  
-//   displayProducts();
+
+
+  function showCart(product){
+    debugger
+    const tbody = document.getElementById('product-tbody');
+            
+            // Create a new table row
+            const newRow = document.createElement('tr');
+            
+            // Define the innerHTML of the new row
+            newRow.innerHTML = `
+                <td>${product.image}</td>
+                <td>${product.name}</td>
+                <td${product.price}</td>
+            `;
+            
+            tbody.appendChild(newRow);
+  }

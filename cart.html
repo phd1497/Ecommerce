@@ -3,50 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Product Page</title>
+  <title>Cart Page</title>
   <link rel="stylesheet" href="cart.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <a href="/Ecommerce/home.html"><h1 class="navbar-title">LoCo Shop</h1></a>
+      <h1 class="navbar-title">LoCo Shop</h1>
       <div class="cart-icon">
-        <a href="">
           <i class="fas fa-shopping-cart" style="color: #ffffff;"></i>
           <span id="cart-count">0</span>
         </a>
       </div>
-      </div>
     </nav>
   </header>
-  <main>
-    <div class="container">
-      <h1>Cart</h1>
-      <div id="cart" class="cart">
-        <p>No items in cart.</p>
+    <div class="cart-container">
+      <h1>Your Shopping Cart</h1>
+      <table class="cart-table">
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+              </tr>
+          </thead>
+          <tbody id="product-tbody">
 
-        <div class="cart-item">
-          <img src="image1.png" alt="Clothes 1" class="cart-item-image">
-          <div class="cart-item-info">
-            <h3>Clothes 1</h3>
-            <p>Price: $15.99</p>
-            <p>Quantity: 2</p>
-          </div>
-          <div class="cart-item-remove">
-            <button>Remove</button>
-          </div>
-        </div>
-  
+          </tbody>
+      </table>
+      <div class="cart-summary">
+          <p><strong>Subtotal:</strong> $100.00</p>
+          <p><strong>Shipping:</strong> $10.00</p>
+          <p><strong>Total:</strong> $110.00</p>
+          <button class="checkout-btn">Proceed to Checkout</button>
       </div>
-      <div class="total">
-        <h3>Total: $<span id="total-cost">0.00</span></h3>
-      </div>
-    </div>
-  </main>
+  </div>
   <footer>
     <p>© 2024 Bracelet Shop. All rights reserved.</p>
   </footer>
-  <script src="function.js"></script>
+  
 </body>
 </html>
