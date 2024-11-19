@@ -25,12 +25,13 @@ main {
 .product-list {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   gap: 20px;
   flex-wrap: wrap;
 }
 
 .product {
+  flex-basis: 150px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -95,6 +96,7 @@ footer {
   position: relative;
   display: flex;
   align-items: center;
+  margin-right: 30px;
 }
 
 .cart-icon i {

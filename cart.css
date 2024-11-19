@@ -79,6 +79,13 @@ footer {
   align-items: center;
 }
 
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
 .cart-icon i {
   width: 30px;
   color: white;
@@ -86,8 +93,8 @@ footer {
 
 #cart-count {
   position: absolute;
-  top: 5px;
-  right: 10px;
+  top: -10px;
+  right: -10px;
   background-color: red;
   color: white;
   border-radius: 50%;
